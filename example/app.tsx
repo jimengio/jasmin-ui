@@ -1,0 +1,28 @@
+import React from "react";
+import ReactDOM from "react-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
+import Dashboard from "./dashboard";
+
+class ExampleApp extends React.Component<any, any> {
+  render() {
+    return (
+      <Router>
+        <Route path="/" render={p => <Dashboard match={p.match} />} />
+      </Router>
+    );
+  }
+}
+
+function renderExampleApp() {
+  ReactDOM.render(<ExampleApp />, document.querySelector("#app_container"));
+}
+
+window.onload = renderExampleApp;
+
+declare const module: any;
+
+if (module.hot) {
+  module.hot.accept(["/"], () => {
+    renderExampleApp();
+  });
+}

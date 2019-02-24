@@ -1,0 +1,7 @@
+src/
+example/
+dist/
+tsconfig.json
+webpack.config.js
+template.ejs
+yarn.lock
