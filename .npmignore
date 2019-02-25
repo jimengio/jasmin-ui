@@ -1,6 +1,10 @@
 src/
 example/
 dist/
+.git
+.vscode
+.awcache
+.gitignore
 tsconfig.json
 webpack.config.js
 template.ejs
