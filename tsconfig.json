@@ -1,22 +1,5 @@
 {
-  "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true,
-    "sourceMap": false,
-    "noImplicitAny": true,
-    "noImplicitThis": true,
-    "strictNullChecks": true,
-    "moduleResolution": "node",
-    "module": "esnext",
-    "jsx": "react",
-    "lib": ["es2016", "dom"],
-    "target": "es5",
-    "baseUrl": "./src",
-    "paths": {
-      "@components/*": ["components/*"],
-      "@styles/*": ["styles/*"]
-    }
-  },
+  "extends": "tsconfig.base.json",
   "awesomeTypescriptLoaderOptions": {
     "useCache": true
   },
