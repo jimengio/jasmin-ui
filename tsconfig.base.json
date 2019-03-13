@@ -15,6 +15,11 @@
     "paths": {
       "@components/*": ["components/*"],
       "@styles/*": ["styles/*"]
-    }
+    },
+    "plugins": [
+      {
+        "name": "typescript-styled-plugin"
+      }
+    ]
   }
 }

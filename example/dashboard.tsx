@@ -1,8 +1,8 @@
 import React from "react";
-import { Switch, Route, Link, NavLink } from "react-router-dom";
+import { Switch, Route, Link, NavLink, Redirect } from "react-router-dom";
 import { css, cx } from "emotion";
 
-import Button from "../src/components/button";
+import Button from "./demos/button";
 
 const componentItems: {
   name: string;
@@ -14,11 +14,7 @@ const componentItems: {
     name: "button",
     title: "Button",
     path: "button",
-    component: (
-      <div>
-        <Button />
-      </div>
-    )
+    component: <Button />
   }
 ];
 
@@ -54,6 +50,7 @@ export default class Dashborad extends React.Component<IProps, IState> {
                 />
               );
             })}
+            <Redirect to={`${match.path}button`} />
           </Switch>
         </div>
       </div>
