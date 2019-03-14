@@ -22,7 +22,7 @@ window.onload = renderExampleApp;
 declare const module: any;
 
 if (module.hot) {
-  module.hot.accept(["/"], () => {
+  module.hot.accept(["./dashboard"], () => {
     renderExampleApp();
   });
 }
