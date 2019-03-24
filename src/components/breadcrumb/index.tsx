@@ -1,17 +1,12 @@
 import React from "react";
 
-import Breadcrumb, {
-  BreadcrumbProps,
-  BreadcrumbItemProps
-} from "antd/lib/breadcrumb";
+import Breadcrumb, { BreadcrumbProps, BreadcrumbItemProps } from "antd/lib/breadcrumb";
 
 export interface JMBreadcrumbItemProps extends BreadcrumbItemProps {}
 
 class JMBreadcrumbItem extends React.Component<JMBreadcrumbItemProps> {
   render() {
-    return (
-      <Breadcrumb.Item {...this.props}>{this.props.children}</Breadcrumb.Item>
-    );
+    return <Breadcrumb.Item {...this.props}>{this.props.children}</Breadcrumb.Item>;
   }
 }
 

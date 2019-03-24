@@ -6,26 +6,26 @@
  *----------*****--------------
  */
 
-const glob = require('glob');
-const prettier = require('prettier');
-const fs = require('fs');
+const glob = require("glob");
+const prettier = require("prettier");
+const fs = require("fs");
 
-const prettierConfigPath = require.resolve('../.prettierrc');
+const prettierConfigPath = require.resolve("../.prettierrc");
 
 let didError = false;
 
 let files = [];
 
-const ignoreFiles = ['**/node_modules/**', 'lib/**', '**/dist/**'];
+const ignoreFiles = ["**/node_modules/**", "lib/**", "**/dist/**"];
 
 // get all ts files
-const tsFiles = glob.sync('**/*.ts*', {
+const tsFiles = glob.sync("**/*.ts*", {
   ignore: ignoreFiles,
 });
 files = files.concat(tsFiles);
 
 // get all js files
-const jsFiles = glob.sync('**/*.js*', {
+const jsFiles = glob.sync("**/*.js*", {
   ignore: ignoreFiles,
 });
 files = files.concat(jsFiles);
@@ -43,14 +43,14 @@ files.forEach(file => {
     return;
   }
   try {
-    const input = fs.readFileSync(file, 'utf8');
+    const input = fs.readFileSync(file, "utf8");
     const withParserOptions = {
       ...options,
       parser: fileInfo.inferredParser,
     };
     const output = prettier.format(input, withParserOptions);
     if (output !== input) {
-      fs.writeFileSync(file, output, 'utf8');
+      fs.writeFileSync(file, output, "utf8");
       // eslint-disable-next-line no-console
       console.log(`\x1b[34m ${file} is prettier`);
     }
@@ -63,4 +63,4 @@ if (didError) {
   process.exit(1);
 }
 // eslint-disable-next-line no-console
-console.log('\x1b[32m prettier success!');
+console.log("\x1b[32m prettier success!");

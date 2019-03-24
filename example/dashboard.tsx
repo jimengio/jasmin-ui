@@ -14,8 +14,8 @@ const componentItems: {
     name: "button",
     title: "Button",
     path: "button",
-    component: <Button />
-  }
+    component: <Button />,
+  },
 ];
 
 interface IProps {
@@ -42,13 +42,7 @@ export default class Dashborad extends React.Component<IProps, IState> {
         <div className={styleContent}>
           <Switch>
             {componentItems.map(item => {
-              return (
-                <Route
-                  key={item.name}
-                  path={`${match.path}${item.path}`}
-                  render={() => item.component as any}
-                />
-              );
+              return <Route key={item.name} path={`${match.path}${item.path}`} render={() => item.component as any} />;
             })}
             <Redirect to={`${match.path}button`} />
           </Switch>

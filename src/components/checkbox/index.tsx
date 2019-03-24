@@ -1,11 +1,6 @@
 import React from "react";
 
-import Checkbox, {
-  CheckboxProps,
-  CheckboxChangeEvent,
-  CheckboxGroupProps,
-  CheckboxOptionType
-} from "antd/lib/checkbox";
+import Checkbox, { CheckboxProps, CheckboxChangeEvent, CheckboxGroupProps, CheckboxOptionType } from "antd/lib/checkbox";
 
 export interface JMCheckboxChangeEvent extends CheckboxChangeEvent {}
 
@@ -15,9 +10,7 @@ export interface JMCheckboxGroupProps extends CheckboxGroupProps {}
 
 class JMCheckboxGroup extends React.Component<JMCheckboxGroupProps> {
   render() {
-    return (
-      <Checkbox.Group {...this.props}>{this.props.children}</Checkbox.Group>
-    );
+    return <Checkbox.Group {...this.props}>{this.props.children}</Checkbox.Group>;
   }
 }
 

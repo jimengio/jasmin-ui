@@ -1,11 +1,6 @@
 import React from "react";
 
-import Table, {
-  TableProps,
-  ColumnProps,
-  TableComponents,
-  TableRowSelection
-} from "antd/lib/table";
+import Table, { TableProps, ColumnProps, TableComponents, TableRowSelection } from "antd/lib/table";
 import ColumnGroup, { ColumnGroupProps } from "antd/lib/table/ColumnGroup";
 
 export interface JMTableComponents extends TableComponents {}

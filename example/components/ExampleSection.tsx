@@ -17,7 +17,7 @@ export default class ExampleSection extends React.Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
     this.state = {
-      isExpand: true
+      isExpand: true,
     };
   }
 
@@ -34,9 +34,7 @@ export default class ExampleSection extends React.Component<IProps, IState> {
             </span>
           </div>
         )}
-        <div
-          className={cx(styleContent, !this.state.isExpand && styleMinHeight)}
-        >
+        <div className={cx(styleContent, !this.state.isExpand && styleMinHeight)}>
           <div className={stylePadding}>{this.props.children}</div>
         </div>
       </div>

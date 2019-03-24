@@ -12,18 +12,18 @@ export { ButtonGroupProps } from "antd/lib/button";
 
 export enum JimuButtonType {
   primary = "primary",
-  danger = "danger"
+  danger = "danger",
 }
 
 export enum JimuButtonShape {
   circle = "circle",
-  round = "round"
+  round = "round",
 }
 
 export enum JimuButtonHtmlType {
   button = "button",
   submit = "submit",
-  reset = "reset"
+  reset = "reset",
 }
 
 export interface JimuButtonProps {
@@ -42,21 +42,11 @@ export interface JimuButtonProps {
 
 export default class JimuButton extends React.Component<JimuButtonProps> {
   static propTypes = {
-    children: PropTypes.node
+    children: PropTypes.node,
   };
 
   render() {
-    const {
-      className,
-      htmlType,
-      type,
-      shape,
-      style,
-      disabled,
-      ghost,
-      loading,
-      block
-    } = this.props;
+    const { className, htmlType, type, shape, style, disabled, ghost, loading, block } = this.props;
 
     const buttonProps: JimuButtonProps = {
       htmlType,
@@ -66,7 +56,7 @@ export default class JimuButton extends React.Component<JimuButtonProps> {
       disabled,
       ghost,
       loading,
-      block
+      block,
     };
 
     let btnClassName;
@@ -83,11 +73,7 @@ export default class JimuButton extends React.Component<JimuButtonProps> {
     }
 
     return (
-      <Button
-        {...buttonProps}
-        className={cx(styleBtnContainer, btnClassName, className)}
-        onClick={this.props.onClick}
-      >
+      <Button {...buttonProps} className={cx(styleBtnContainer, btnClassName, className)} onClick={this.props.onClick}>
         {this.props.children}
       </Button>
     );

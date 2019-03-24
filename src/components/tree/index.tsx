@@ -1,20 +1,12 @@
 import React from "react";
 
-import Tree, {
-  TreeProps,
-  DirectoryTreeProps,
-  AntTreeNodeProps
-} from "antd/lib/tree";
+import Tree, { TreeProps, DirectoryTreeProps, AntTreeNodeProps } from "antd/lib/tree";
 
 export interface JMDirectoryTreeProps extends DirectoryTreeProps {}
 
 class JMDirectoryTree extends React.Component<JMDirectoryTreeProps> {
   render() {
-    return (
-      <Tree.DirectoryTree {...this.props}>
-        {this.props.children}
-      </Tree.DirectoryTree>
-    );
+    return <Tree.DirectoryTree {...this.props}>{this.props.children}</Tree.DirectoryTree>;
   }
 }
 

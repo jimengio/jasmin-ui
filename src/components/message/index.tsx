@@ -1,10 +1,6 @@
 import React from "react";
 
-import message, {
-  ConfigOptions,
-  ArgsProps,
-  MessageApi
-} from "antd/lib/message";
+import message, { ConfigOptions, ArgsProps, MessageApi } from "antd/lib/message";
 
 export interface JMMessageConfig extends ConfigOptions {}
 

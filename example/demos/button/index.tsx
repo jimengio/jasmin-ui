@@ -23,7 +23,7 @@ export default class ButtonDemo extends React.Component<IProps> {
   onClick = () => {
     message.success("test message");
     Notification.success({
-      message: "test notification"
+      message: "test notification",
     });
   };
 }

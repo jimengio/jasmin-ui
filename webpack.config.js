@@ -8,7 +8,7 @@ module.exports = {
   entry: "./example/app.tsx",
   output: {
     filename: "[name].js",
-    path: path.resolve(__dirname, "dist/")
+    path: path.resolve(__dirname, "dist/"),
   },
   module: {
     rules: [
@@ -16,26 +16,26 @@ module.exports = {
         test: /\.css$/,
         use: [
           {
-            loader: "style-loader"
+            loader: "style-loader",
           },
           {
-            loader: "css-loader"
-          }
-        ]
+            loader: "css-loader",
+          },
+        ],
       },
       {
         test: /\.tsx?$/,
         loader: "awesome-typescript-loader",
-        exclude: /node_modules/
-      }
-    ]
+        exclude: /node_modules/,
+      },
+    ],
   },
   plugins: [
     new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
       filename: "index.html",
-      template: "template.ejs"
-    })
+      template: "template.ejs",
+    }),
   ],
   devtool: "cheap-source-map",
   devServer: {
@@ -47,15 +47,15 @@ module.exports = {
     host: "0.0.0.0",
     port: 6602,
     watchOptions: {
-      ignored: [/node_module/]
-    }
+      ignored: [/node_module/],
+    },
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
     plugins: [
       new TSConfigPathsWebpackPlugin({
-        configFile: path.resolve(__dirname, "./tsconfig.json")
-      })
-    ]
-  }
+        configFile: path.resolve(__dirname, "./tsconfig.json"),
+      }),
+    ],
+  },
 };

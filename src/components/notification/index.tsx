@@ -1,10 +1,6 @@
 import React from "react";
 
-import notification, {
-  ConfigProps,
-  ArgsProps,
-  NotificationApi
-} from "antd/lib/notification";
+import notification, { ConfigProps, ArgsProps, NotificationApi } from "antd/lib/notification";
 
 export interface NotificationConfig extends ConfigProps {}
 

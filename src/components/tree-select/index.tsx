@@ -6,11 +6,7 @@ export type JMTreeNode = TreeNode;
 
 class JMTreeSelectNode extends React.Component<JMTreeNode> {
   render() {
-    return (
-      <TreeSelect.TreeNode {...this.props}>
-        {this.props.children}
-      </TreeSelect.TreeNode>
-    );
+    return <TreeSelect.TreeNode {...this.props}>{this.props.children}</TreeSelect.TreeNode>;
   }
 }
 

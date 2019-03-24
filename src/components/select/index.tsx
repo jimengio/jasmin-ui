@@ -1,10 +1,6 @@
 import React from "react";
 
-import Select, {
-  SelectProps,
-  OptionProps,
-  OptGroupProps
-} from "antd/lib/select";
+import Select, { SelectProps, OptionProps, OptGroupProps } from "antd/lib/select";
 
 export interface JMSelectOptionProps extends OptionProps {}
 
@@ -19,9 +15,7 @@ export interface JMSelectOptGroupProps extends OptGroupProps {}
 
 class JMSelectOptGroup extends React.Component<JMSelectOptGroupProps> {
   render() {
-    return (
-      <Select.OptGroup {...this.props}>{this.props.children}</Select.OptGroup>
-    );
+    return <Select.OptGroup {...this.props}>{this.props.children}</Select.OptGroup>;
   }
 }
 

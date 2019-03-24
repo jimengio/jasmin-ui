@@ -1,24 +1,14 @@
 import React from "react";
 
 import DatePicker from "antd/lib/date-picker";
-import {
-  DatePickerProps,
-  RangePickerProps,
-  MonthPickerProps,
-  WeekPickerProps,
-  RangePickerValue
-} from "antd/lib/date-picker/interface";
+import { DatePickerProps, RangePickerProps, MonthPickerProps, WeekPickerProps, RangePickerValue } from "antd/lib/date-picker/interface";
 
 // 周选择器
 export interface JMWeekPickerProps extends WeekPickerProps {}
 
 class JMWeekPicker extends React.Component<JMWeekPickerProps> {
   render() {
-    return (
-      <DatePicker.WeekPicker {...this.props}>
-        {this.props.children}
-      </DatePicker.WeekPicker>
-    );
+    return <DatePicker.WeekPicker {...this.props}>{this.props.children}</DatePicker.WeekPicker>;
   }
 }
 
@@ -27,11 +17,7 @@ export interface JMMonthPickerProps extends MonthPickerProps {}
 
 class JMMonthPicker extends React.Component<JMMonthPickerProps> {
   render() {
-    return (
-      <DatePicker.MonthPicker {...this.props}>
-        {this.props.children}
-      </DatePicker.MonthPicker>
-    );
+    return <DatePicker.MonthPicker {...this.props}>{this.props.children}</DatePicker.MonthPicker>;
   }
 }
 
@@ -42,11 +28,7 @@ export interface JMRangePickerProps extends RangePickerProps {}
 
 class JMRangePicker extends React.Component<JMRangePickerProps> {
   render() {
-    return (
-      <DatePicker.RangePicker {...this.props}>
-        {this.props.children}
-      </DatePicker.RangePicker>
-    );
+    return <DatePicker.RangePicker {...this.props}>{this.props.children}</DatePicker.RangePicker>;
   }
 }
 

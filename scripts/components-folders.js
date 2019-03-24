@@ -33,7 +33,7 @@ function fileDisplay(filePath) {
       fs.writeFileSync(
         path.resolve("./scripts/folder-names.json"),
         JSON.stringify({
-          folders: names
+          folders: names,
         })
       );
     }

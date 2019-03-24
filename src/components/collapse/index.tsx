@@ -6,9 +6,7 @@ export interface JMCollapsePanelProps extends CollapsePanelProps {}
 
 class JMCollapsePanel extends React.Component<JMCollapsePanelProps> {
   render() {
-    return (
-      <Collapse.Panel {...this.props}>{this.props.children}</Collapse.Panel>
-    );
+    return <Collapse.Panel {...this.props}>{this.props.children}</Collapse.Panel>;
   }
 }
 
