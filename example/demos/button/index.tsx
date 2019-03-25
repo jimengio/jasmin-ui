@@ -14,16 +14,18 @@ export default class ButtonDemo extends React.Component<IProps> {
     return (
       <div className={fullHeight}>
         <ExampleSection title="初始状态">
-          <Button onClick={this.onClick}>Test</Button>
+          <Button type="primary" onClick={this.onClick}>
+            Test
+          </Button>
         </ExampleSection>
       </div>
     );
   }
 
   onClick = () => {
-    message.success("test message");
-    Notification.success({
-      message: "test notification",
-    });
+    // message.success("test message");
+    // Notification.success({
+    //   message: "test notification",
+    // });
   };
 }
