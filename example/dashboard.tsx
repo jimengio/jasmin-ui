@@ -3,6 +3,7 @@ import { Switch, Route, Link, NavLink, Redirect } from "react-router-dom";
 import { css, cx } from "emotion";
 
 import Button from "./demos/button";
+import Table from "./demos/table";
 
 const componentItems: {
   name: string;
@@ -15,6 +16,12 @@ const componentItems: {
     title: "Button",
     path: "button",
     component: <Button />,
+  },
+  {
+    name: "table",
+    title: "Table",
+    path: "table",
+    component: <Table />,
   },
 ];
 

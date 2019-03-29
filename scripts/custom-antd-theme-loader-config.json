@@ -1,0 +1,13 @@
+{
+  "loader": "less-loader",
+  "options": {
+    "modifyVars": {
+      "primary-color": "#238ff3",
+      "link-color": "#238ff3",
+      "error-color": "#f04864",
+      "warning-color": "#ffc161",
+      "table-header-bg": "#F2F2F2"
+    },
+    "javascriptEnabled": true
+  }
+}

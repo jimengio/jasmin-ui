@@ -2,6 +2,7 @@ var path = require("path");
 var webpack = require("webpack");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 var TSConfigPathsWebpackPlugin = require("tsconfig-paths-webpack-plugin");
+var MiniCSSExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   mode: "development",
@@ -16,11 +17,19 @@ module.exports = {
         test: /\.css$/,
         use: [
           {
-            loader: "style-loader",
+            loader: MiniCSSExtractPlugin.loader,
+            options: {
+              publicPath: "./",
+              exclude: /node_modules/,
+            },
           },
           {
             loader: "css-loader",
           },
+          //TODO: 重新定制antd主题时会用到
+          // {
+          //   loader: "less-loader",
+          // },
         ],
       },
       {
@@ -31,6 +40,10 @@ module.exports = {
     ],
   },
   plugins: [
+    new MiniCSSExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css",
+    }),
     new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
       filename: "index.html",
@@ -51,7 +64,7 @@ module.exports = {
     },
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js"],
+    extensions: [".tsx", ".ts", ".js", ".json"],
     plugins: [
       new TSConfigPathsWebpackPlugin({
         configFile: path.resolve(__dirname, "./tsconfig.json"),
