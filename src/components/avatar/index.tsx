@@ -6,6 +6,7 @@ export interface JMAvatarProps extends AvatarProps {}
 
 export default class JMAvatar extends React.Component<JMAvatarProps> {
   render() {
-    return <Avatar {...this.props}>{this.props.children}</Avatar>;
+    const { children, ...others } = this.props;
+    return <Avatar {...others}>{children}</Avatar>;
   }
 }

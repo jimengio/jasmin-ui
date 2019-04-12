@@ -6,7 +6,8 @@ export interface JMStepProps extends StepProps {}
 
 class JMStep extends React.Component<JMStepProps> {
   render() {
-    return <Steps.Step {...this.props}>{this.props.children}</Steps.Step>;
+    const { children, ...others } = this.props;
+    return <Steps.Step {...others}>{children}</Steps.Step>;
   }
 }
 
@@ -16,6 +17,7 @@ export default class JMSteps extends React.Component<JMStepsProps> {
   static Step = JMStep;
 
   render() {
-    return <Steps {...this.props}>{this.props.children}</Steps>;
+    const { children, ...others } = this.props;
+    return <Steps {...others}>{children}</Steps>;
   }
 }

@@ -6,7 +6,8 @@ export interface JMRadioGroupProps extends RadioGroupProps {}
 
 class RadioGroup extends React.Component<JMRadioGroupProps> {
   render() {
-    return <Radio.Group {...this.props}>{this.props.children}</Radio.Group>;
+    const { children, ...others } = this.props;
+    return <Radio.Group {...others}>{children}</Radio.Group>;
   }
 }
 
@@ -18,6 +19,7 @@ export default class JMDivider extends React.Component<JMRadioProps> {
   static Button = Radio.Button;
 
   render() {
-    return <Radio {...this.props}>{this.props.children}</Radio>;
+    const { children, ...others } = this.props;
+    return <Radio {...others}>{children}</Radio>;
   }
 }

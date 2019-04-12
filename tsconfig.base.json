@@ -13,10 +13,6 @@
     "lib": ["es2016", "dom"],
     "target": "es5",
     "baseUrl": "./src",
-    "paths": {
-      "@components/*": ["components/*"],
-      "@styles/*": ["styles/*"]
-    },
     "plugins": [
       {
         "name": "typescript-styled-plugin"

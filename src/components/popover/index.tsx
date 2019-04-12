@@ -6,6 +6,7 @@ export interface JMPopoverProps extends PopoverProps {}
 
 export default class JMPopover extends React.Component<JMPopoverProps> {
   render() {
-    return <Popover {...this.props}>{this.props.children}</Popover>;
+    const { children, ...others } = this.props;
+    return <Popover {...others}>{children}</Popover>;
   }
 }

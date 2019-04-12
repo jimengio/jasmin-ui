@@ -10,6 +10,7 @@ export default class JMAutoComplete extends React.Component<JMAutoCompleteProps>
   static OptGroup = AutoComplete.OptGroup;
 
   render() {
-    return <AutoComplete {...this.props}>{this.props.children}</AutoComplete>;
+    const { children, ...others } = this.props;
+    return <AutoComplete {...others}>{children}</AutoComplete>;
   }
 }

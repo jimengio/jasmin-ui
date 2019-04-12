@@ -11,6 +11,7 @@ export interface JMUploadProps extends UploadProps {}
 
 export default class JMUpload extends React.Component<JMUploadProps> {
   render() {
-    return <Upload {...this.props}>{this.props.children}</Upload>;
+    const { children, ...others } = this.props;
+    return <Upload {...others}>{children}</Upload>;
   }
 }

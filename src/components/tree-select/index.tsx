@@ -6,7 +6,8 @@ export type JMTreeNode = TreeNode;
 
 class JMTreeSelectNode extends React.Component<JMTreeNode> {
   render() {
-    return <TreeSelect.TreeNode {...this.props}>{this.props.children}</TreeSelect.TreeNode>;
+    const { children, ...others } = this.props;
+    return <TreeSelect.TreeNode {...others}>{children}</TreeSelect.TreeNode>;
   }
 }
 
@@ -18,6 +19,7 @@ export default class JMTreeSelect extends React.Component<JMTreeSelectProps> {
   static TreeNode = JMTreeSelectNode;
 
   render() {
-    return <TreeSelect {...this.props}>{this.props.children}</TreeSelect>;
+    const { children, ...others } = this.props;
+    return <TreeSelect {...others}>{children}</TreeSelect>;
   }
 }

@@ -6,7 +6,8 @@ export interface JMRowProps extends RowProps {}
 
 export class JMRow extends React.Component<JMRowProps> {
   render() {
-    return <Row {...this.props}>{this.props.children}</Row>;
+    const { children, ...others } = this.props;
+    return <Row {...others}>{children}</Row>;
   }
 }
 
@@ -14,6 +15,7 @@ export interface JMColProps extends ColProps {}
 
 export class JMCol extends React.Component<JMColProps> {
   render() {
-    return <Col {...this.props}>{this.props.children}</Col>;
+    const { children, ...others } = this.props;
+    return <Col {...others}>{children}</Col>;
   }
 }

@@ -6,7 +6,8 @@ export interface JMBreadcrumbItemProps extends BreadcrumbItemProps {}
 
 class JMBreadcrumbItem extends React.Component<JMBreadcrumbItemProps> {
   render() {
-    return <Breadcrumb.Item {...this.props}>{this.props.children}</Breadcrumb.Item>;
+    const { children, ...others } = this.props;
+    return <Breadcrumb.Item {...others}>{children}</Breadcrumb.Item>;
   }
 }
 
@@ -16,6 +17,7 @@ export default class JMBreadcrumb extends React.Component<JMBreadcrumbProps> {
   static Item = JMBreadcrumbItem;
 
   render() {
-    return <Breadcrumb {...this.props}>{this.props.children}</Breadcrumb>;
+    const { children, ...others } = this.props;
+    return <Breadcrumb {...others}>{children}</Breadcrumb>;
   }
 }

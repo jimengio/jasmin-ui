@@ -36,22 +36,11 @@ export default class JimuButton extends React.Component<JimuButtonProps> {
   };
 
   render() {
-    const { className, htmlType, type, shape, style, disabled, ghost, loading, block } = this.props;
-
-    const buttonProps: JimuButtonProps = {
-      htmlType,
-      type,
-      shape,
-      style,
-      disabled,
-      ghost,
-      loading,
-      block,
-    };
+    const { className, children, ...others } = this.props;
 
     return (
-      <Button {...buttonProps} className={cx(styleBtnContainer, className)} onClick={this.props.onClick}>
-        {this.props.children}
+      <Button className={cx(styleBtnContainer, className)} {...others}>
+        {children}
       </Button>
     );
   }

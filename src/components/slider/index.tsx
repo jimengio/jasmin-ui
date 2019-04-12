@@ -13,6 +13,7 @@ export interface JMSliderProps extends SliderProps {
 
 export default class JMSlider extends React.Component<JMSliderProps> {
   render() {
-    return <Slider {...this.props}>{this.props.children}</Slider>;
+    const { children, ...others } = this.props;
+    return <Slider {...others}>{children}</Slider>;
   }
 }

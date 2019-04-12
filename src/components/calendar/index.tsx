@@ -6,6 +6,7 @@ export interface JMCalendarProps extends CalendarProps {}
 
 export default class JMCalendar extends React.Component<JMCalendarProps> {
   render() {
-    return <Calendar {...this.props}>{this.props.children}</Calendar>;
+    const { children, ...others } = this.props;
+    return <Calendar {...others}>{children}</Calendar>;
   }
 }

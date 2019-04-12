@@ -6,7 +6,8 @@ export interface JMTimelineItemProps extends TimeLineItemProps {}
 
 class JMTimelineItem extends React.Component<JMTimelineItemProps> {
   render() {
-    return <Timeline.Item {...this.props}>{this.props.children}</Timeline.Item>;
+    const { children, ...others } = this.props;
+    return <Timeline.Item {...others}>{children}</Timeline.Item>;
   }
 }
 
@@ -16,6 +17,7 @@ export default class JMTimeline extends React.Component<JMTimelineProps> {
   static Item = JMTimelineItem;
 
   render() {
-    return <Timeline {...this.props}>{this.props.children}</Timeline>;
+    const { children, ...others } = this.props;
+    return <Timeline {...others}>{children}</Timeline>;
   }
 }

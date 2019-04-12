@@ -11,6 +11,7 @@ export interface JMTransferProps extends TransferProps {
 
 export default class JMTransfer extends React.Component<JMTransferProps> {
   render() {
-    return <Transfer {...this.props}>{this.props.children}</Transfer>;
+    const { children, ...others } = this.props;
+    return <Transfer {...others}>{children}</Transfer>;
   }
 }

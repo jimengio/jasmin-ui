@@ -1,6 +1,6 @@
-src/
-example/
-dist/
+src
+example
+dist
 .git
 .vscode
 .awcache

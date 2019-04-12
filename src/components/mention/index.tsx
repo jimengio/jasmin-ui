@@ -6,6 +6,7 @@ export interface JMMentionProps extends MentionProps {}
 
 export default class JMMention extends React.Component<JMMentionProps> {
   render() {
-    return <Mention {...this.props}>{this.props.children}</Mention>;
+    const { children, ...others } = this.props;
+    return <Mention {...others}>{children}</Mention>;
   }
 }

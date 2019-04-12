@@ -6,6 +6,7 @@ export interface JMDrawerProps extends DrawerProps {}
 
 export default class JMDrawer extends React.Component<JMDrawerProps> {
   render() {
-    return <Drawer {...this.props}>{this.props.children}</Drawer>;
+    const { children, ...others } = this.props;
+    return <Drawer {...others}>{children}</Drawer>;
   }
 }

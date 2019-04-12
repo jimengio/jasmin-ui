@@ -6,7 +6,8 @@ export interface JMAnchorLinkProps extends AnchorLinkProps {}
 
 class JMAnchorLink extends React.Component<JMAnchorLinkProps> {
   render() {
-    return <Anchor.Link {...this.props}>{this.props.children}</Anchor.Link>;
+    const { children, ...others } = this.props;
+    return <Anchor.Link {...others}>{children}</Anchor.Link>;
   }
 }
 
@@ -16,6 +17,7 @@ export default class JMAnchor extends React.Component<JMAnchorProps> {
   static Link = JMAnchorLink;
 
   render() {
-    return <Anchor {...this.props}>{this.props.children}</Anchor>;
+    const { children, ...others } = this.props;
+    return <Anchor {...others}>{children}</Anchor>;
   }
 }
