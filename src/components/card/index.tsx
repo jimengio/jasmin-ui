@@ -6,7 +6,8 @@ export interface JMCardGridProps extends CardGridProps {}
 
 class JMCardGrid extends React.Component<JMCardGridProps> {
   render() {
-    return <Card.Grid {...this.props}>{this.props.children}</Card.Grid>;
+    const { children, ...others } = this.props;
+    return <Card.Grid {...others}>{children}</Card.Grid>;
   }
 }
 
@@ -14,7 +15,8 @@ export interface JMCardMetaProps extends CardMetaProps {}
 
 class JMCardMeta extends React.Component<JMCardMetaProps> {
   render() {
-    return <Card.Meta {...this.props}>{this.props.children}</Card.Meta>;
+    const { children, ...others } = this.props;
+    return <Card.Meta {...others}>{children}</Card.Meta>;
   }
 }
 
@@ -26,6 +28,7 @@ export default class JMCard extends React.Component<JMCardProps> {
   static Meta = JMCardMeta;
 
   render() {
-    return <Card {...this.props}>{this.props.children}</Card>;
+    const { children, ...others } = this.props;
+    return <Card {...others}>{children}</Card>;
   }
 }

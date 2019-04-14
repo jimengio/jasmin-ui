@@ -6,6 +6,7 @@ export interface JMPaginationProps extends PaginationProps {}
 
 export default class JMPagination extends React.Component<JMPaginationProps> {
   render() {
-    return <Pagination {...this.props}>{this.props.children}</Pagination>;
+    const { children, ...others } = this.props;
+    return <Pagination {...others}>{children}</Pagination>;
   }
 }

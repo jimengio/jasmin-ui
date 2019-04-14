@@ -6,6 +6,7 @@ export interface JMSpinProps extends SpinProps {}
 
 export default class JMSpin extends React.Component<JMSpinProps> {
   render() {
-    return <Spin {...this.props}>{this.props.children}</Spin>;
+    const { children, ...others } = this.props;
+    return <Spin {...others}>{children}</Spin>;
   }
 }

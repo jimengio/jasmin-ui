@@ -6,6 +6,7 @@ export interface JMInputNumberProps extends InputNumberProps {}
 
 export default class JMInputNumber extends React.Component<JMInputNumberProps> {
   render() {
-    return <InputNumber {...this.props} />;
+    const { children, ...others } = this.props;
+    return <InputNumber {...others} />;
   }
 }

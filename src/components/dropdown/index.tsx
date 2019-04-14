@@ -6,7 +6,8 @@ export interface JMDropdownButtonProps extends DropdownButtonProps {}
 
 class JMDropdownButton extends React.Component<JMDropdownButtonProps> {
   render() {
-    return <Dropdown.Button {...this.props}>{this.props.children}</Dropdown.Button>;
+    const { children, ...others } = this.props;
+    return <Dropdown.Button {...others}>{children}</Dropdown.Button>;
   }
 }
 
@@ -16,6 +17,7 @@ export default class JMDropdown extends React.Component<DropDownProps> {
   static Button = JMDropdownButton;
 
   render() {
-    return <Dropdown {...this.props}>{this.props.children}</Dropdown>;
+    const { children, ...others } = this.props;
+    return <Dropdown {...others}>{children}</Dropdown>;
   }
 }

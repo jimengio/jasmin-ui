@@ -6,7 +6,8 @@ export interface JMDirectoryTreeProps extends DirectoryTreeProps {}
 
 class JMDirectoryTree extends React.Component<JMDirectoryTreeProps> {
   render() {
-    return <Tree.DirectoryTree {...this.props}>{this.props.children}</Tree.DirectoryTree>;
+    const { children, ...others } = this.props;
+    return <Tree.DirectoryTree {...others}>{children}</Tree.DirectoryTree>;
   }
 }
 
@@ -14,7 +15,8 @@ export interface JMTreeNodeProps extends AntTreeNodeProps {}
 
 class JMTreeNode extends React.Component<JMTreeNodeProps> {
   render() {
-    return <Tree.TreeNode {...this.props}>{this.props.children}</Tree.TreeNode>;
+    const { children, ...others } = this.props;
+    return <Tree.TreeNode {...others}>{children}</Tree.TreeNode>;
   }
 }
 
@@ -26,6 +28,7 @@ export default class JMTree extends React.Component<JMTreeProps> {
   static DirectoryTree = JMDirectoryTree;
 
   render() {
-    return <Tree {...this.props}>{this.props.children}</Tree>;
+    const { children, ...others } = this.props;
+    return <Tree {...others}>{children}</Tree>;
   }
 }

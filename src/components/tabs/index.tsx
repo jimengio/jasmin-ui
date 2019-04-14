@@ -6,7 +6,8 @@ export interface JMTabPaneProps extends TabPaneProps {}
 
 class JMTabPane extends React.Component<JMTabPaneProps> {
   render() {
-    return <Tabs.TabPane {...this.props}>{this.props.children}</Tabs.TabPane>;
+    const { children, ...others } = this.props;
+    return <Tabs.TabPane {...others}>{children}</Tabs.TabPane>;
   }
 }
 
@@ -16,6 +17,7 @@ export default class JMTabs extends React.Component<JMTabsProps> {
   static TabPane = JMTabPane;
 
   render() {
-    return <Tabs {...this.props}>{this.props.children}</Tabs>;
+    const { children, ...others } = this.props;
+    return <Tabs {...others}>{children}</Tabs>;
   }
 }

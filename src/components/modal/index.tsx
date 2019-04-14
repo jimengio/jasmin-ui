@@ -6,6 +6,7 @@ export interface JMModalProps extends ModalProps {}
 
 export default class JMModal extends React.Component<JMModalProps> {
   render() {
-    return <Modal {...this.props}>{this.props.children}</Modal>;
+    const { children, ...others } = this.props;
+    return <Modal {...others}>{children}</Modal>;
   }
 }

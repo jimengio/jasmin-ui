@@ -6,6 +6,7 @@ export interface JMInputProps extends InputProps {}
 
 export default class JMInput extends React.Component<JMInputProps> {
   render() {
-    return <Input {...this.props} />;
+    const { children, ...others } = this.props;
+    return <Input {...others} />;
   }
 }

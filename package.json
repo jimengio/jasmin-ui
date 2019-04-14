@@ -1,6 +1,6 @@
 {
   "name": "jasmin-ui",
-  "version": "0.1.0",
+  "version": "0.1.0-a1",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "repository": "git@github.com:jimengio/jasmin-ui.git",
@@ -16,7 +16,6 @@
     "postinstall": "yarn prettier"
   },
   "dependencies": {
-    "@jimengio/jimo-icons": "^0.1.7",
     "antd": "^3.13.5",
     "emotion": "^10.0.7",
     "prop-types": "^15.7.2",

@@ -10,7 +10,8 @@ export interface JMCheckboxGroupProps extends CheckboxGroupProps {}
 
 class JMCheckboxGroup extends React.Component<JMCheckboxGroupProps> {
   render() {
-    return <Checkbox.Group {...this.props}>{this.props.children}</Checkbox.Group>;
+    const { children, ...others } = this.props;
+    return <Checkbox.Group {...others}>{children}</Checkbox.Group>;
   }
 }
 
@@ -20,6 +21,7 @@ export default class JMCheckbox extends React.Component<JMCheckboxProps> {
   static Group = JMCheckboxGroup;
 
   render() {
-    return <Checkbox {...this.props}>{this.props.children}</Checkbox>;
+    const { children, ...others } = this.props;
+    return <Checkbox {...others}>{children}</Checkbox>;
   }
 }

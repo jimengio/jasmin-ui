@@ -6,6 +6,7 @@ export interface JMAlertProps extends AlertProps {}
 
 export default class JMAlert extends React.Component<JMAlertProps> {
   render() {
-    return <Alert {...this.props}>{this.props.children}</Alert>;
+    const { children, ...others } = this.props;
+    return <Alert {...others}>{children}</Alert>;
   }
 }

@@ -11,7 +11,8 @@ export interface JMListItemProps extends ListItemProps {}
 
 class JMListItem extends React.Component<JMListItemProps> {
   render() {
-    return <List.Item {...this.props}>{this.props.children}</List.Item>;
+    const { children, ...others } = this.props;
+    return <List.Item {...others}>{children}</List.Item>;
   }
 }
 
@@ -21,6 +22,7 @@ export default class JMList extends React.Component<JMListProps> {
   static Item = JMListItem;
 
   render() {
-    return <List {...this.props}>{this.props.children}</List>;
+    const { children, ...others } = this.props;
+    return <List {...others}>{children}</List>;
   }
 }

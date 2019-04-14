@@ -6,6 +6,7 @@ export interface JMCarouselProps extends CarouselProps {}
 
 export default class JMCarousel extends React.Component<JMCarouselProps> {
   render() {
-    return <Carousel {...this.props}>{this.props.children}</Carousel>;
+    const { children, ...others } = this.props;
+    return <Carousel {...others}>{children}</Carousel>;
   }
 }

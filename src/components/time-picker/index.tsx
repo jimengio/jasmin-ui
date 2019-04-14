@@ -6,6 +6,7 @@ export interface JMTimePickerProps extends TimePickerProps {}
 
 export default class JMTimePicker extends React.Component<JMTimePickerProps> {
   render() {
-    return <TimePicker {...this.props}>{this.props.children}</TimePicker>;
+    const { children, ...others } = this.props;
+    return <TimePicker {...others}>{children}</TimePicker>;
   }
 }

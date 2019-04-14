@@ -6,6 +6,7 @@ export interface JMEmptyProps extends EmptyProps {}
 
 export default class JMEmpty extends React.Component<JMEmptyProps> {
   render() {
-    return <Empty {...this.props}>{this.props.children}</Empty>;
+    const { children, ...others } = this.props;
+    return <Empty {...others}>{children}</Empty>;
   }
 }

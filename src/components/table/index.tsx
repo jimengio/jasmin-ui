@@ -11,7 +11,8 @@ export interface JMColumnGroupProps extends ColumnGroupProps {}
 
 class JMColumnGroup extends React.Component<JMColumnGroupProps> {
   render() {
-    return <ColumnGroup {...this.props}>{this.props.children}</ColumnGroup>;
+    const { children, ...others } = this.props;
+    return <ColumnGroup {...others}>{children}</ColumnGroup>;
   }
 }
 
@@ -19,7 +20,8 @@ export interface JMColumnProps<T> extends ColumnProps<T> {}
 
 class TableColumn<T> extends React.Component<JMColumnProps<T>> {
   render() {
-    return <Table.Column {...this.props}>{this.props.children}</Table.Column>;
+    const { children, ...others } = this.props;
+    return <Table.Column {...others}>{children}</Table.Column>;
   }
 }
 
@@ -36,6 +38,7 @@ export default class JMTable<T> extends React.Component<JMTableProps<T>> {
   static ColumnGroup = JMColumnGroup;
 
   render() {
-    return <Table {...this.props}>{this.props.children}</Table>;
+    const { children, ...others } = this.props;
+    return <Table {...others}>{children}</Table>;
   }
 }

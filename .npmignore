@@ -1,11 +1,11 @@
-src/
-example/
-dist/
+src
+example
+dist
 .git
 .vscode
 .awcache
 .gitignore
-tsconfig.json
+tsconfig*
 webpack.config.js
 template.ejs
 yarn.lock

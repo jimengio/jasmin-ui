@@ -10,6 +10,7 @@ export default class JMMenu extends React.Component<JMMenuProps> {
   static SubMenu = Menu.SubMenu;
 
   render() {
-    return <Menu {...this.props}>{this.props.children}</Menu>;
+    const { children, ...others } = this.props;
+    return <Menu {...others}>{children}</Menu>;
   }
 }

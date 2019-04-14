@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 
 import Button from "antd/lib/button";
 import { css, cx } from "emotion";
-import { ColorOperateStatus } from "@styles/colors";
 
 export { ButtonGroupProps } from "antd/lib/button";
 
@@ -36,22 +35,11 @@ export default class JimuButton extends React.Component<JimuButtonProps> {
   };
 
   render() {
-    const { className, htmlType, type, shape, style, disabled, ghost, loading, block } = this.props;
-
-    const buttonProps: JimuButtonProps = {
-      htmlType,
-      type,
-      shape,
-      style,
-      disabled,
-      ghost,
-      loading,
-      block,
-    };
+    const { className, children, ...others } = this.props;
 
     return (
-      <Button {...buttonProps} className={cx(styleBtnContainer, className)} onClick={this.props.onClick}>
-        {this.props.children}
+      <Button className={cx(styleBtnContainer, className)} {...others}>
+        {children}
       </Button>
     );
   }

@@ -6,6 +6,7 @@ export interface JMPopconfirmProps extends PopconfirmProps {}
 
 export default class JMPopconfirm extends React.Component<JMPopconfirmProps> {
   render() {
-    return <Popconfirm {...this.props}>{this.props.children}</Popconfirm>;
+    const { children, ...others } = this.props;
+    return <Popconfirm {...others}>{children}</Popconfirm>;
   }
 }

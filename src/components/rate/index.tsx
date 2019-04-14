@@ -6,6 +6,7 @@ export interface JMRateProps extends RateProps {}
 
 export default class JMRate extends React.Component<JMRateProps> {
   render() {
-    return <Rate {...this.props}>{this.props.children}</Rate>;
+    const { children, ...others } = this.props;
+    return <Rate {...others}>{children}</Rate>;
   }
 }

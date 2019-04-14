@@ -6,6 +6,7 @@ export interface JMProgressProps extends ProgressProps {}
 
 export default class JMProgress extends React.Component<JMProgressProps> {
   render() {
-    return <Progress {...this.props}>{this.props.children}</Progress>;
+    const { children, ...others } = this.props;
+    return <Progress {...others}>{children}</Progress>;
   }
 }

@@ -6,6 +6,7 @@ export interface JMBadgeProps extends BadgeProps {}
 
 export default class JMBadge extends React.Component<JMBadgeProps> {
   render() {
-    return <Badge {...this.props}>{this.props.children}</Badge>;
+    const { children, ...others } = this.props;
+    return <Badge {...others}>{children}</Badge>;
   }
 }

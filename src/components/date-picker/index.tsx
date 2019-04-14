@@ -8,7 +8,8 @@ export interface JMWeekPickerProps extends WeekPickerProps {}
 
 class JMWeekPicker extends React.Component<JMWeekPickerProps> {
   render() {
-    return <DatePicker.WeekPicker {...this.props}>{this.props.children}</DatePicker.WeekPicker>;
+    const { children, ...others } = this.props;
+    return <DatePicker.WeekPicker {...others}>{children}</DatePicker.WeekPicker>;
   }
 }
 
@@ -17,7 +18,8 @@ export interface JMMonthPickerProps extends MonthPickerProps {}
 
 class JMMonthPicker extends React.Component<JMMonthPickerProps> {
   render() {
-    return <DatePicker.MonthPicker {...this.props}>{this.props.children}</DatePicker.MonthPicker>;
+    const { children, ...others } = this.props;
+    return <DatePicker.MonthPicker {...others}>{children}</DatePicker.MonthPicker>;
   }
 }
 
@@ -28,7 +30,8 @@ export interface JMRangePickerProps extends RangePickerProps {}
 
 class JMRangePicker extends React.Component<JMRangePickerProps> {
   render() {
-    return <DatePicker.RangePicker {...this.props}>{this.props.children}</DatePicker.RangePicker>;
+    const { children, ...others } = this.props;
+    return <DatePicker.RangePicker {...others}>{children}</DatePicker.RangePicker>;
   }
 }
 
@@ -43,6 +46,7 @@ export default class JMDatePicker extends React.Component<JMDatePickerProps> {
   static MonthPicker = JMMonthPicker;
 
   render() {
-    return <DatePicker {...this.props}>{this.props.children}</DatePicker>;
+    const { children, ...others } = this.props;
+    return <DatePicker {...others}>{children}</DatePicker>;
   }
 }

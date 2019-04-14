@@ -6,7 +6,8 @@ export interface JMSiderProps extends SiderProps {}
 
 class JMLayoutSider extends React.Component<JMSiderProps> {
   render() {
-    return <Layout.Sider {...this.props}>{this.props.children}</Layout.Sider>;
+    const { children, ...others } = this.props;
+    return <Layout.Sider {...others}>{children}</Layout.Sider>;
   }
 }
 
@@ -22,6 +23,7 @@ export default class JMLayout extends React.Component<JMLayoutProps> {
   static Sider = JMLayoutSider;
 
   render() {
-    return <Layout {...this.props}>{this.props.children}</Layout>;
+    const { children, ...others } = this.props;
+    return <Layout {...others}>{children}</Layout>;
   }
 }

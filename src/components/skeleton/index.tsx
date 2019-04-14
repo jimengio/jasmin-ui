@@ -15,6 +15,7 @@ export interface JMSkeletonProps extends SkeletonProps {}
 
 export default class JMSkeleton extends React.Component<JMSkeletonProps> {
   render() {
-    return <Skeleton {...this.props}>{this.props.children}</Skeleton>;
+    const { children, ...others } = this.props;
+    return <Skeleton {...others}>{children}</Skeleton>;
   }
 }

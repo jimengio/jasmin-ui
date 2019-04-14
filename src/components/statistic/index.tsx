@@ -7,6 +7,7 @@ export interface JMStatisticProps extends StatisticProps {}
 
 export default class JMStatistic extends React.Component<JMStatisticProps> {
   render() {
-    return <Statistic {...this.props}>{this.props.children}</Statistic>;
+    const { children, ...others } = this.props;
+    return <Statistic {...others}>{children}</Statistic>;
   }
 }
