@@ -1,6 +1,6 @@
 {
-  "name": "@jimengio/jasmin-ui",
-  "version": "0.1.1-a1",
+  "name": "jasmin-ui",
+  "version": "0.1.1-a3",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "repository": "git@github.com:jimengio/jasmin-ui.git",
