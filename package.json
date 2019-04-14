@@ -16,7 +16,6 @@
     "postinstall": "yarn prettier"
   },
   "dependencies": {
-    "@jimengio/jimo-icons": "^0.1.7",
     "antd": "^3.13.5",
     "emotion": "^10.0.7",
     "prop-types": "^15.7.2",

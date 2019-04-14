@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 
 import Button from "antd/lib/button";
 import { css, cx } from "emotion";
-import { ColorOperateStatus } from "@styles/colors";
 
 export { ButtonGroupProps } from "antd/lib/button";
 

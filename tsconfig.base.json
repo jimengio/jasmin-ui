@@ -8,7 +8,7 @@
     "strictNullChecks": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "module": "esnext",
+    "module": "commonjs",
     "jsx": "react",
     "lib": ["es2016", "dom"],
     "target": "es5",
