@@ -1,5 +1,3 @@
-import "antd/dist/antd.min.css";
-
 export * from "./colors";
 
 export * from "./basic";
