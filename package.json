@@ -10,9 +10,9 @@
     "dev": "webpack-dev-server --hot",
     "remove-lib": "rm -rf lib",
     "prettier": "node ./scripts/prettier.js",
-    "cp-antd-css": "cp -f node_modules/antd/dist/antd.min.css lib/styles/",
+    "cp-antd-css": "cp -f node_modules/antd/dist/antd.min.css lib/assets/antd/",
     "compile": "tsc -d -p tsconfig.release.json --outDir lib/",
-    "prepublish": "yarn remove-lib && yarn compile",
+    "prepublish": "yarn remove-lib && yarn compile && yarn cp-antd-css",
     "postinstall": "yarn prettier"
   },
   "dependencies": {

@@ -38,15 +38,15 @@ export default class JimuButton extends React.Component<JimuButtonProps> {
     const { className, children, ...others } = this.props;
 
     return (
-      <Button className={cx(styleBtnContainer, className)} {...others}>
+      <Button className={className} {...others}>
         {children}
       </Button>
     );
   }
 }
 
-const styleBtnContainer = css`
-  padding: 6px 24px;
-  text-align: center;
-  font-size: 14px;
-`;
+// const styleBtnContainer = css`
+//   padding: 6px 24px;
+//   text-align: center;
+//   font-size: 14px;
+// `;
