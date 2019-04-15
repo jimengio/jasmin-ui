@@ -16,16 +16,14 @@
     "postinstall": "yarn prettier"
   },
   "dependencies": {
-    "antd": "^3.13.5",
-    "emotion": "^10.0.7",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3",
-    "react-router-dom": "^4.3.1"
+    "antd": "3.13.5",
+    "emotion": "10.0.7",
+    "prop-types": "15.7.2",
+    "react": "16.8.3"
   },
   "devDependencies": {
     "@types/node": "^11.11.6",
-    "@types/react": "^16.8.4",
+    "@types/react": "16.8.4",
     "@types/react-dom": "^16.8.2",
     "@types/react-router-dom": "^4.3.1",
     "awesome-typescript-loader": "^5.2.1",
@@ -36,6 +34,8 @@
     "less-loader": "^4.1.0",
     "mini-css-extract-plugin": "^0.5.0",
     "prettier": "^1.16.4",
+    "react-dom": "^16.8.3",
+    "react-router-dom": "^4.3.1",
     "style-loader": "^0.23.1",
     "tsconfig-paths-webpack-plugin": "^3.2.0",
     "typescript": "^3.3.3333",
