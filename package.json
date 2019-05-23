@@ -6,7 +6,12 @@
   "repository": "git@github.com:jimengio/jasmin-ui.git",
   "author": "rebirthO <benyue.liu@jimeng.io>",
   "license": "ISC",
-  "keywords": ["jasmin-ui","ui","jimengio","@jimengio/jasmin-ui"],
+  "keywords": [
+    "jasmin-ui",
+    "ui",
+    "jimengio",
+    "@jimengio/jasmin-ui"
+  ],
   "scripts": {
     "dev": "webpack-dev-server --hot",
     "remove-lib": "rm -rf lib",

@@ -62,6 +62,16 @@ module.exports = {
     watchOptions: {
       ignored: [/node_module/],
     },
+    stats: {
+      all: false,
+      colors: true,
+      errors: true,
+      errorDetails: true,
+      performance: true,
+      reasons: true,
+      timings: true,
+      warnings: true,
+    },
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js", ".json"],
