@@ -37,3 +37,33 @@ yarn dev
 ```bash
 yarn release
 ```
+
+### Colored Tabs
+
+Compared to tabs:
+
+* DOM structure too simple, not many properties.
+* No animations.
+* Allow customizing styles, especially when used in dark background.
+
+```tsx
+import {ColoredTabs, IColoredTab } from "@jimengio/jasmin-ui";
+
+let tabs: IColoredTab[] = [
+  { value: "factory", display: "工厂" },
+  { value: "material", display: "物料" },
+  { value: "analysis", display: "分析结果" },
+  { value: "process", display: "制程" },
+];
+
+<ColoredTabs value={tab} tabs={tabs} onChange={setTab} />
+
+<ColoredTabs
+  value={tab}
+  tabs={tabs}
+  onChange={setTab}
+  tabClassName={styleTab}
+  activeTabClassName={styleActiveTab}
+  highlightClassName={styleTabHighlight}
+/>
+```

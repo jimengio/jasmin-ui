@@ -103,3 +103,5 @@ export { default as Tooltip } from "./components/tooltip";
 export { default as Mention } from "./components/mention";
 
 export { default as Upload } from "./components/upload";
+
+export { default as ColoredTabs, IColoredTab } from "./components/colored-tabs/index";

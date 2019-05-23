@@ -1,4 +1,4 @@
-src
+
 example
 dist
 .git
@@ -6,6 +6,8 @@ dist
 .awcache
 .gitignore
 tsconfig*
-webpack.config.js
 template.ejs
 yarn.lock
+scripts
+webpack*
+.prettier*
