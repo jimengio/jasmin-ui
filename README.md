@@ -50,10 +50,10 @@ Compared to tabs:
 import {ColoredTabs, IColoredTab } from "@jimengio/jasmin-ui";
 
 let tabs: IColoredTab[] = [
-  { value: "factory", display: "工厂" },
-  { value: "material", display: "物料" },
-  { value: "analysis", display: "分析结果" },
-  { value: "process", display: "制程" },
+  { value: "factory", title: "工厂" },
+  { value: "material", title: "物料" },
+  { value: "analysis", title: "分析结果" },
+  { value: "process", title: "制程" },
 ];
 
 <ColoredTabs value={tab} tabs={tabs} onChange={setTab} />

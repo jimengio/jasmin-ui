@@ -3,10 +3,10 @@ import { css, cx } from "emotion";
 import ColoredTabs, { IColoredTab } from "@components/colored-tabs";
 
 let tabs: IColoredTab[] = [
-  { value: "factory", display: "工厂" },
-  { value: "material", display: "物料" },
-  { value: "analysis", display: "分析结果" },
-  { value: "process", display: "制程" },
+  { value: "factory", title: "工厂" },
+  { value: "material", title: "物料" },
+  { value: "analysis", title: "分析结果" },
+  { value: "process", title: "制程" },
 ];
 
 let DemoColoredTab: FC<{}> = props => {

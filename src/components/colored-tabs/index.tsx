@@ -4,7 +4,7 @@ import { css, cx } from "emotion";
 export interface IColoredTab {
   key?: string;
   value: string;
-  display: string;
+  title: string;
 }
 
 let ColoredTabs: FC<{
@@ -35,7 +35,7 @@ let ColoredTabs: FC<{
               props.onChange(tab.value);
             }}
           >
-            <span>{tab.display}</span>
+            <span>{tab.title}</span>
             {isSelected ? <div className={cx(styleHighlight, props.highlightClassName)} /> : null}
           </div>
         );
