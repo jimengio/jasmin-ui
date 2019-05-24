@@ -4,6 +4,8 @@ Demo http://fe.jimu.io/jasmin-ui
 
 #### Usage
 
+![](https://img.shields.io/npm/v/@jimengio/jasmin-ui.svg?style=flat-square)
+
 ```bash
 yarn add @jimengio/jasmin-ui
 ```
