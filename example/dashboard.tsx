@@ -4,6 +4,7 @@ import { css, cx } from "emotion";
 
 import Button from "./demos/button";
 import Table from "./demos/table";
+import DemoColoredTab from "./demos/colored-tab/index";
 
 const componentItems: {
   name: string;
@@ -22,6 +23,12 @@ const componentItems: {
     title: "Table",
     path: "table",
     component: <Table />,
+  },
+  {
+    name: "colored-tabs",
+    title: "Colored Tabs",
+    path: "colored-tabs",
+    component: <DemoColoredTab />,
   },
 ];
 

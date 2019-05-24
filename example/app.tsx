@@ -2,7 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, HashRouter } from "react-router-dom";
 import Dashboard from "./dashboard";
+
 import "antd/dist/antd.min.css";
+import "./main.css";
 
 class ExampleApp extends React.Component<any, any> {
   render() {
