@@ -1,6 +1,6 @@
 {
   "name": "@jimengio/jasmin-ui",
-  "version": "0.1.2-a1",
+  "version": "0.1.2-a4",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "repository": "git@github.com:jimengio/jasmin-ui.git",
@@ -14,14 +14,14 @@
   ],
   "scripts": {
     "dev": "webpack-dev-server --hot",
+    "watch": "webpack-dev-server --hot",
     "release": "webpack --config webpack.release.js",
     "remove-lib": "rm -rf lib",
     "prettier": "node ./scripts/prettier.js",
     "cp-antd-css": "mkdir -p lib/assets/antd && cp -f node_modules/antd/dist/antd.min.css lib/assets/antd/",
     "compile": "tsc -d -p tsconfig.release.json --outDir lib/",
-    "prepublish": "yarn remove-lib && yarn compile && yarn cp-antd-css",
-    "upload": "rsync -avr --progress dist/ fe.jimu.io:~/repo/jimengio/jasmin-ui",
-    "postinstall": "yarn prettier"
+    "prepare": "yarn remove-lib && yarn compile && yarn cp-antd-css",
+    "upload": "rsync -avr --progress dist/ fe.jimu.io:~/repo/jimengio/jasmin-ui"
   },
   "dependencies": {
     "antd": "3.13.5",

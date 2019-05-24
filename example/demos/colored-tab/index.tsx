@@ -1,5 +1,5 @@
 import React, { FC, useState } from "react";
-import { css } from "emotion";
+import { css, cx } from "emotion";
 import ColoredTabs, { IColoredTab } from "@components/colored-tabs";
 
 let tabs: IColoredTab[] = [
@@ -13,7 +13,7 @@ let DemoColoredTab: FC<{}> = props => {
   let [tab, setTab] = useState<string>(null as any);
 
   return (
-    <div className={styleContainer}>
+    <div>
       <ColoredTabs value={tab} tabs={tabs} onChange={setTab} />
 
       <div className={styleDarkArea}>
@@ -31,8 +31,6 @@ let DemoColoredTab: FC<{}> = props => {
 };
 
 export default DemoColoredTab;
-
-let styleContainer = css``;
 
 let styleDarkArea = css`
   margin-top: 100px;

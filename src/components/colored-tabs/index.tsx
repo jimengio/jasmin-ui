@@ -17,7 +17,7 @@ let ColoredTabs: FC<{
   highlightClassName?: string;
 }> = props => {
   return (
-    <div className={cx(styleContainer, props.className)}>
+    <div className={cx(props.className)}>
       {props.tabs.map((tab, idx) => {
         let isSelected = props.value === tab.value;
 
@@ -27,15 +27,15 @@ let ColoredTabs: FC<{
             className={cx(
               styleTab,
               idx === 0 ? styleFirstTab : null,
-              isSelected ? styleCurrentTab : null,
               props.tabClassName,
+              isSelected ? styleCurrentTab : null,
               isSelected ? props.activeTabClassName : null
             )}
             onClick={event => {
               props.onChange(tab.value);
             }}
           >
-            {tab.display}
+            <span>{tab.display}</span>
             {isSelected ? <div className={cx(styleHighlight, props.highlightClassName)} /> : null}
           </div>
         );
@@ -45,8 +45,6 @@ let ColoredTabs: FC<{
 };
 
 export default ColoredTabs;
-
-let styleContainer = css``;
 
 let defaultTheme = `hsl(209, 100%, 55%)`;
 
@@ -65,8 +63,14 @@ let styleTab = css`
   }
 `;
 
+/** inline content does not scale, 1.14~=16/14 of font-size. Page should not be shaking */
 let styleCurrentTab = css`
   color: ${defaultTheme};
+
+  span:first-of-type {
+    display: inline-block;
+    transform: scale(1.14);
+  }
 `;
 
 let styleFirstTab = css`
