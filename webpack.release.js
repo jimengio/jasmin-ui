@@ -3,9 +3,11 @@ var webpack = require("webpack");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 var TSConfigPathsWebpackPlugin = require("tsconfig-paths-webpack-plugin");
 var MiniCSSExtractPlugin = require("mini-css-extract-plugin");
+let DuplicatePackageCheckerPlugin = require("duplicate-package-checker-webpack-plugin");
+// const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   entry: "./example/app.tsx",
   output: {
     filename: "[name].js",
@@ -45,12 +47,16 @@ module.exports = {
       chunkFilename: "[id].css",
     }),
     new webpack.NamedModulesPlugin(),
+    new webpack.IgnorePlugin(/draft-js/),
+    new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /zh-cn/),
     new HtmlWebpackPlugin({
       filename: "index.html",
       template: "template.ejs",
     }),
+    new DuplicatePackageCheckerPlugin(),
+    // new BundleAnalyzerPlugin(),
   ],
-  devtool: "cheap-source-map",
+  devtool: "none",
   stats: {
     all: false,
     colors: true,
