@@ -6,8 +6,7 @@ import { css, cx } from "emotion";
 
 export { ButtonGroupProps } from "antd/lib/button";
 
-//TODO: 目前 jimu 样式中 button size是统一的，暂不考虑 size 的设置
-// export type JimuButtonSize = "default" | "small" | "large";
+export type JimuButtonSize = "default" | "small" | "large";
 
 export type JimuButtonType = "primary" | "danger" | "default";
 
@@ -17,7 +16,7 @@ export type JimuButtonHtmlType = "button" | "submit" | "reset";
 
 export interface JimuButtonProps {
   className?: string;
-  // size?: JimuButtonSize;
+  size?: JimuButtonSize;
   htmlType?: JimuButtonHtmlType;
   type?: JimuButtonType;
   shape?: JimuButtonShape;
