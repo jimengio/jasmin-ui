@@ -5,6 +5,7 @@ import { css, cx } from "emotion";
 import Button from "./demos/button";
 import Table from "./demos/table";
 import DemoColoredTab from "./demos/colored-tab/index";
+import DemoGroupedCheckbox from "./demos/grouped-checkbox";
 
 const componentItems: {
   name: string;
@@ -29,6 +30,12 @@ const componentItems: {
     title: "Colored Tabs",
     path: "colored-tabs",
     component: <DemoColoredTab />,
+  },
+  {
+    name: "grouped-checkbox",
+    title: "Grouped Checkbox",
+    path: "grouped-checkbox",
+    component: <DemoGroupedCheckbox />,
   },
 ];
 

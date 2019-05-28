@@ -47,7 +47,6 @@ module.exports = {
       chunkFilename: "[id].css",
     }),
     new webpack.NamedModulesPlugin(),
-    new webpack.IgnorePlugin(/draft-js/),
     new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /zh-cn/),
     new HtmlWebpackPlugin({
       filename: "index.html",
