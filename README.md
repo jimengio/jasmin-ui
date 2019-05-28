@@ -79,15 +79,15 @@ let checkedKeys: string[] = []
 let items: IGroupedCheckboxItem[] = [
   {
     key: "quality",
-    title: "查看",
-    onChange: (checked: boolean, key: string) => {},
+    title: "查看"
   },
 ];
 
 <GroupedCheckbox
   items={items}
   title={"所有"}
-  onChange={(checked, selectedKeys) => { }}
   checkedKeys={checkedKeys}
+  onGroupChange={(checked, selectedKeys) => { }}
+  onItemChange={(checked: boolean, key: string) => { }}
 />
 ```

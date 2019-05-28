@@ -5,16 +5,21 @@ import { Checkbox } from "antd";
 export interface IGroupedCheckboxItem {
   key: string;
   title: string;
-  onChange: (checked: boolean, key: string) => void;
+  /** optional. if not defined, fallbacks to onItemChange */
+  onChange?: (checked: boolean, key: string) => void;
 }
 
 let GroupedCheckbox: FC<{
+  /** defaults to "All" */
   title?: string;
   items: IGroupedCheckboxItem[];
   checkedKeys: string[];
   className?: string;
   itemClassName?: string;
-  onChange: (checked: boolean, selectedkeys: string[]) => void;
+  /** changes of the whole group */
+  onGroupChange: (checked: boolean, selectedkeys: string[]) => void;
+  /** optional. if item.noChange is defined, this function will not be used */
+  onItemChange?: (checked: boolean, key: string) => void;
 }> = props => {
   let allChecked = props.items.length > 0 && props.items.every(item => props.checkedKeys.includes(item.key));
 
@@ -25,7 +30,7 @@ let GroupedCheckbox: FC<{
         onChange={event => {
           let checked = event.target.checked;
           let keys = checked ? props.items.map(x => x.key) : [];
-          props.onChange(checked, keys);
+          props.onGroupChange(checked, keys);
         }}
       >
         {props.title || "All"}
@@ -37,7 +42,14 @@ let GroupedCheckbox: FC<{
               <Checkbox
                 checked={props.checkedKeys.includes(item.key)}
                 onChange={event => {
-                  item.onChange(event.target.checked, item.key);
+                  let checked = event.target.checked;
+                  if (item.onChange != null) {
+                    item.onChange(event.target.checked, item.key);
+                  } else if (props.onItemChange) {
+                    props.onItemChange(checked, item.key);
+                  } else {
+                    console.error("Found no change handler!", item);
+                  }
                 }}
               >
                 {item.title}

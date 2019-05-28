@@ -26,17 +26,14 @@ let DemoGroupedCheckbox: FC<{}> = props => {
     {
       key: "quality",
       title: "查看",
-      onChange: changeKey,
     },
     {
       key: "manage",
       title: "管理",
-      onChange: changeKey,
     },
     {
       key: "alerts",
       title: "报警",
-      onChange: changeKey,
     },
   ];
 
@@ -46,10 +43,11 @@ let DemoGroupedCheckbox: FC<{}> = props => {
       <GroupedCheckbox
         items={items}
         title={"所有权限"}
-        onChange={(checked, selectedKeys) => {
+        checkedKeys={checkedKeys}
+        onGroupChange={(checked, selectedKeys) => {
           setCheckKeys(selectedKeys);
         }}
-        checkedKeys={checkedKeys}
+        onItemChange={changeKey}
       />
     </div>
   );
