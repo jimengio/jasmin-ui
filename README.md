@@ -69,3 +69,25 @@ let tabs: IColoredTab[] = [
   highlightClassName={styleTabHighlight}
 />
 ```
+
+### Grouped Checkbox
+
+```tsx
+import { GroupedCheckbox, IGroupedCheckboxItem } from "@jimengio/jasmin-ui";
+
+let checkedKeys: string[] = []
+let items: IGroupedCheckboxItem[] = [
+  {
+    key: "quality",
+    title: "查看"
+  },
+];
+
+<GroupedCheckbox
+  items={items}
+  title={"所有"}
+  checkedKeys={checkedKeys}
+  onGroupChange={(checked, selectedKeys) => { }}
+  onItemChange={(checked: boolean, key: string) => { }}
+/>
+```
