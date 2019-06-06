@@ -1,6 +1,9 @@
-import React, { FC } from "react";
+import React, { FC, useRef, MutableRefObject, useState } from "react";
 import { css, cx } from "emotion";
 import { column, row } from "@jimengio/shared-utils";
+import ReactResizeDetector from "react-resize-detector";
+import FaIcons, { IconName } from "@jimengio/fa-icons";
+import FaIcon from "@jimengio/fa-icons";
 
 export interface IColoredTab {
   key?: string;
@@ -17,30 +20,73 @@ let ColoredTabs: FC<{
   activeTabClassName?: string;
   highlightClassName?: string;
 }> = props => {
-  return (
-    <div className={cx(row, styleContainer, props.className)}>
-      {props.tabs.map((tab, idx) => {
-        let isSelected = props.value === tab.value;
+  let [showLeft, setShowLeft] = useState(false);
+  let [showRight, setShowRight] = useState(false);
+  let scrollArea = useRef<HTMLDivElement>() as MutableRefObject<HTMLDivElement>;
 
-        return (
-          <div
-            key={tab.key || tab.value}
-            className={cx(
-              styleTab,
-              idx === 0 ? styleFirstTab : null,
-              props.tabClassName,
-              isSelected ? styleCurrentTab : null,
-              isSelected ? props.activeTabClassName : null
-            )}
-            onClick={event => {
-              props.onChange(tab.value);
-            }}
-          >
-            <span>{tab.title}</span>
-            {isSelected ? <div className={cx(styleHighlight, props.highlightClassName)} /> : null}
-          </div>
-        );
-      })}
+  let onResize = () => {
+    let el: HTMLDivElement = scrollArea.current;
+    let hasScroll = el.scrollWidth > el.clientWidth;
+    if (hasScroll) {
+      setShowLeft(el.scrollLeft === 0 ? false : true);
+      setShowRight(el.scrollLeft + el.clientWidth >= el.scrollWidth ? false : true);
+    } else {
+      setShowLeft(false);
+      setShowRight(false);
+    }
+  };
+
+  /** slightly larger then half of a tab width */
+  let offset = 60;
+
+  let onScrollLeft = () => {
+    let el: HTMLDivElement = scrollArea.current;
+    let distance = el.clientWidth - offset;
+    let ramaining = el.scrollLeft;
+    el.scrollLeft -= distance;
+    setShowLeft(ramaining > distance);
+    setShowRight(true);
+  };
+
+  let onScrollRight = () => {
+    let el: HTMLDivElement = scrollArea.current;
+    let distance = el.clientWidth - offset;
+    let remaining = el.scrollWidth - el.clientWidth - el.scrollLeft;
+    el.scrollLeft += distance;
+    setShowLeft(true);
+    setShowRight(remaining > distance);
+  };
+
+  return (
+    <div className={cx(styleContainer, props.className)}>
+      <div className={cx(row, styleScroll)} ref={scrollArea}>
+        {props.tabs.map((tab, idx) => {
+          let isSelected = props.value === tab.value;
+
+          return (
+            <div
+              key={tab.key || tab.value}
+              className={cx(
+                styleTab,
+                idx === 0 ? styleFirstTab : null,
+                props.tabClassName,
+                isSelected ? styleCurrentTab : null,
+                isSelected ? props.activeTabClassName : null
+              )}
+              onClick={event => {
+                props.onChange(tab.value);
+              }}
+            >
+              <span>{tab.title}</span>
+              {isSelected ? <div className={cx(styleHighlight, props.highlightClassName)} /> : null}
+            </div>
+          );
+        })}
+      </div>
+      <ReactResizeDetector handleWidth onResize={onResize} />
+
+      {showLeft ? <FaIcon className={styleLeft} name={IconName.AngleLeft} onClick={onScrollLeft} /> : null}
+      {showRight ? <FaIcon className={cx(styleLeft, styleRight)} name={IconName.AngleRight} onClick={onScrollRight} /> : null}
     </div>
   );
 };
@@ -88,5 +134,26 @@ let styleHighlight = css`
 `;
 
 let styleContainer = css`
-  overflow: auto;
+  position: relative;
+  padding: 0 24px;
+`;
+
+let styleLeft = css`
+  position: absolute;
+  font-size: 28px;
+  left: 4px;
+  color: #ccc;
+  bottom: 10px;
+  cursor: pointer;
+`;
+
+let styleRight = css`
+  right: 4px;
+  left: auto;
+`;
+
+let styleScroll = css`
+  max-width: 100%;
+  overflow: hidden;
+  scroll-behavior: smooth;
 `;
