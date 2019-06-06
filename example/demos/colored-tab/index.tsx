@@ -7,6 +7,10 @@ let tabs: IColoredTab[] = [
   { value: "material", title: "物料" },
   { value: "analysis", title: "分析结果" },
   { value: "process", title: "制程" },
+  { value: "carpet", title: "地毯图" },
+  { value: "histgram", title: "直方图" },
+  { value: "tech", title: "工艺" },
+  { value: "part", title: "零件" },
 ];
 
 let DemoColoredTab: FC<{}> = props => {

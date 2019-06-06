@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { css, cx } from "emotion";
+import { column, row } from "@jimengio/shared-utils";
 
 export interface IColoredTab {
   key?: string;
@@ -17,7 +18,7 @@ let ColoredTabs: FC<{
   highlightClassName?: string;
 }> = props => {
   return (
-    <div className={cx(props.className)}>
+    <div className={cx(row, styleContainer, props.className)}>
       {props.tabs.map((tab, idx) => {
         let isSelected = props.value === tab.value;
 
@@ -84,4 +85,8 @@ let styleHighlight = css`
   left: 0;
   bottom: 0;
   background-color: ${defaultTheme};
+`;
+
+let styleContainer = css`
+  overflow: auto;
 `;
