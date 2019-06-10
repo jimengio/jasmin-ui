@@ -33,6 +33,17 @@ module.exports = {
         ],
       },
       {
+        test: /\.(eot|svg|ttf|jpg|png|woff|woff2?)(\?.+)?$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "assets/[hash:8].[ext]",
+            },
+          },
+        ],
+      },
+      {
         test: /\.tsx?$/,
         loader: "awesome-typescript-loader",
         exclude: /node_modules/,
