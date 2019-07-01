@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "@components/button";
 import Notification from "@components/notification";
+import Modal from "@components/modal";
 import { message } from "@components/index";
 import { css, cx } from "emotion";
 import { fullHeight } from "@styles/index";
@@ -23,6 +24,9 @@ export default class ButtonDemo extends React.Component<IProps> {
   }
 
   onClick = () => {
+    Modal.confirm({
+      content: "测试 Modal",
+    });
     // message.success("test message");
     // Notification.success({
     //   message: "test notification",
