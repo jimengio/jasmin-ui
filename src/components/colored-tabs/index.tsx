@@ -2,8 +2,7 @@ import React, { FC, useRef, MutableRefObject, useState } from "react";
 import { css, cx } from "emotion";
 import { column, row } from "@jimengio/shared-utils";
 import ReactResizeDetector from "react-resize-detector";
-import FaIcons, { IconName } from "@jimengio/fa-icons";
-import FaIcon from "@jimengio/fa-icons";
+import FaIcon, { EFaIcon } from "@jimengio/fa-icons";
 
 export interface IColoredTab {
   key?: string;
@@ -85,8 +84,8 @@ let ColoredTabs: FC<{
       </div>
       <ReactResizeDetector handleWidth onResize={onResize} />
 
-      {showLeft ? <FaIcon className={styleLeft} name={IconName.AngleLeft} onClick={onScrollLeft} /> : null}
-      {showRight ? <FaIcon className={cx(styleLeft, styleRight)} name={IconName.AngleRight} onClick={onScrollRight} /> : null}
+      {showLeft ? <FaIcon className={styleLeft} name={EFaIcon.AngleLeft} onClick={onScrollLeft} /> : null}
+      {showRight ? <FaIcon className={cx(styleLeft, styleRight)} name={EFaIcon.AngleRight} onClick={onScrollRight} /> : null}
     </div>
   );
 };
