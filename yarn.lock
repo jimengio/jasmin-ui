@@ -80,10 +80,10 @@
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.2.tgz#63985d3d8b02530e0869962f4da09142ee8e200e"
 
-"@jimengio/fa-icons@^0.1.11":
-  version "0.1.11"
-  resolved "https://registry.yarnpkg.com/@jimengio/fa-icons/-/fa-icons-0.1.11.tgz#f071b7d88a9b1f189943886be9396f6400dc243e"
-  integrity sha512-jcBtzPD34VTosq1CZWAZCy9vMvZvtBlUI4HwHQ7bVnj4asJcDg1sOdn6WhrKHNNmPj3HI3RYeeS950tkc7Uwug==
+"@jimengio/fa-icons@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@jimengio/fa-icons/-/fa-icons-0.2.0.tgz#50cfe599ee4c9ab70e780be4ddc6dc78d8bd33a8"
+  integrity sha512-QpSuslOYU+cHgWNlwtQCRxHQVsm4cyzxbjeItf9NH0tW85RveNs1mJvkCD9CndehOXn04eoqxKA+Mwhju0UDaQ==
 
 "@jimengio/shared-utils@^0.1.3":
   version "0.1.3"
