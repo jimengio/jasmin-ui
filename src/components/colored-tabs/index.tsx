@@ -1,6 +1,6 @@
 import React, { FC, useRef, MutableRefObject, useState } from "react";
 import { css, cx } from "emotion";
-import { column, row } from "@jimengio/shared-utils";
+import { column, row } from "@jimengio/flex-styles";
 import ReactResizeDetector from "react-resize-detector";
 import FaIcon, { EFaIcon } from "@jimengio/fa-icons";
 
